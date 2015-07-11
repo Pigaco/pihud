@@ -1,0 +1,3 @@
+[submodule "libpiga"]
+	path = libpiga
+	url = https://github.com/Pigaco/libpiga.git
