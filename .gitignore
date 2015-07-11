@@ -2,6 +2,7 @@
 build/
 .kateproject 
 *.user*
+.kdev4/
 
 *.autosave
 [._]*.s[a-w][a-z]
