@@ -106,10 +106,10 @@ namespace PiH
         m_victoryImage->setPosition(getBoundingBox().x + getBoundingBox().w / 2 - m_victoryImage->getBoundingBox().w / 2,
                                     10);
 
-        m_playerNameLabel->setPosition(getBoundingBox().x + getBoundingBox().w / 2 - m_playerNameLabel->getBoundingBox().w / 2,
-                                              getBoundingBox().y + getBoundingBox().h / 2 - getBoundingBox().y / 4 - m_playerNameLabel->getBoundingBox().h / 2);
-        m_playerNameDisplayLabel->setPosition(getBoundingBox().x + getBoundingBox().w / 2 - m_playerNameDisplayLabel->getBoundingBox().w / 2,
-                                       getBoundingBox().h / 4 * 3 - m_playerNameDisplayLabel->getBoundingBox().h / 2);
+        m_playerNameLabel->setPosition(getBoundingBox().x + getBoundingBox().w / 2 - m_playerNameLabel->getTextWidth() / 2,
+                                              getBoundingBox().y + getBoundingBox().h / 2 - getBoundingBox().y / 4 - m_playerNameLabel->getTextHeight() / 2);
+        m_playerNameDisplayLabel->setPosition(getBoundingBox().x + getBoundingBox().w / 2 - m_playerNameDisplayLabel->getTextWidth() / 2,
+                                       getBoundingBox().h / 4 * 3 - m_playerNameDisplayLabel->getTextHeight() / 2);
 
         m_particleSource->setXStartRange(getBoundingBox().w / 6 * 2, getBoundingBox().w / 6 * 4);
         m_particleSource->setYStartRange(getBoundingBox().y + getBoundingBox().h, getBoundingBox().y + getBoundingBox().h + 100);
