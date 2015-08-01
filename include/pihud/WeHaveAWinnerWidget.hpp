@@ -37,6 +37,6 @@ namespace PiH
             std::unique_ptr<Label> m_playerNameDisplayLabel;
             bool m_done = false;
             float m_time = 0;
-            float m_stayForSeconds = 3;
+            float m_stayForSeconds = 1;
     };
 }
