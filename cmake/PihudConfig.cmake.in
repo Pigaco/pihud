@@ -1,0 +1,37 @@
+# Defines
+#    - Pihud_LIBRARIES
+#    - Pihud_INCLUDE_DIRS
+
+find_library(Pihud_LIBRARIES pihud
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+    HINTS pihud libpihud
+    NO_DEFAULT_PATH
+)
+
+find_path(Pihud_INCLUDE_DIRS pihud/Config.hpp
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+    NO_DEFAULT_PATH
+)
+
+list(APPEND CMAKE_MODULE_PATH "${Pihud_INCLUDE_DIRS}/../lib/cmake/pihud")
+
+# Add sigc++2
+find_package(SigC++ REQUIRED)
+list(APPEND Pihud_LIBRARIES ${SIGC++_LIBRARY})
+list(APPEND Pihud_INCLUDE_DIRS ${SIGC++_INCLUDE_DIR})
+
+find_package(SDL2 REQUIRED)
+list(APPEND Pihud_LIBRARIES ${SDL2_LIBRARY})
+list(APPEND Pihud_INCLUDE_DIRS ${SDL2_INCLUDE_DIRS})
+
+find_package(SDL2image REQUIRED)
+list(APPEND Pihud_LIBRARIES ${SDL2IMAGE_LIBRARY})
+list(APPEND Pihud_INCLUDE_DIRS ${SDL2IMAGE_INCLUDE_DIRS})
+
+find_package(SDL2ttf REQUIRED)
+list(APPEND Pihud_LIBRARIES ${SDL2TTF_LIBRARY})
+list(APPEND Pihud_INCLUDE_DIRS ${SDL2TTF_INCLUDE_DIR})
+
+find_package(Libpiga REQUIRED)
+list(APPEND Pihud_LIBRARIES ${Libpiga_LIBRARIES})
+list(APPEND Pihud_INCLUDE_DIRS ${Libpiga_INCLUDE_DIRS})
